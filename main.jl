@@ -32,3 +32,6 @@ function d2dx(u,dx)
     return [[zero(eltype(u))]; (u[3:end] - 2.0.*u[2:end-1] + u[1:end-2]) ./ (dx^2); [zero(eltype(u))]]
 end
 
+## ODE description of the Physics:
+function burgers(u,p,t)
+
