@@ -34,4 +34,9 @@ end
 
 ## ODE description of the Physics:
 function burgers(u,p,t)
+     # Model parameters
+    a0, a1 = p
+    dx,Nx = xtrs #[1.0,3.0,0.125,100]
+    return 2.0*a0 .* u +  a1 .* d2dx(u, dx)
+end
 
