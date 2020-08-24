@@ -17,3 +17,11 @@ t0, tMax = 0.0 ,1000*dt
 tspan    = (t0,tMax)
 t        = t0:dt:tMax;
 
+## Definition of Auxiliary functions
+function ddx(u,dx)
+    """
+    2nd order Central difference for 1st degree derivative
+    """
+    return [[zero(eltype(u))] ; (u[3:end] - u[1:end-2]) ./ (2.0*dx) ; [zero(eltype(u))]]
+end
+
