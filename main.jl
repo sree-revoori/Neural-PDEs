@@ -25,3 +25,8 @@ function ddx(u,dx)
     return [[zero(eltype(u))] ; (u[3:end] - u[1:end-2]) ./ (2.0*dx) ; [zero(eltype(u))]]
 end
 
+function d2dx(u,dx)
+    """
+    2nd order Central difference for 2nd degree derivative
+    """
+
