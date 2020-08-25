@@ -40,3 +40,8 @@ function burgers(u,p,t)
     return 2.0*a0 .* u +  a1 .* d2dx(u, dx)
 end
 
+# Testing Solver on linear PDE
+prob = ODEProblem(burgers,u0,tspan,p)
+sol = solve(prob,Tsit5(), dt=dt,saveat=t);
+
+
