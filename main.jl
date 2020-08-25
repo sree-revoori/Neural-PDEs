@@ -59,5 +59,9 @@ function loss(θ)
     return sum(abs2, l), pred # Mean squared error
 end
 
+l,pred   = loss(ps)
+size(pred), size(sol), size(t) # Checking sizes
+
+
 
 
