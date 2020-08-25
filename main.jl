@@ -62,6 +62,11 @@ end
 l,pred   = loss(ps)
 size(pred), size(sol), size(t) # Checking sizes
 
+LOSS  = []                              # Loss accumulator
+PRED  = []                              # prediction accumulator
+PARS  = []                              # parameters accumulator
+
+
 
 
 
