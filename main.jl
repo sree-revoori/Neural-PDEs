@@ -44,4 +44,8 @@ end
 prob = ODEProblem(burgers,u0,tspan,p)
 sol = solve(prob,Tsit5(), dt=dt,saveat=t);
 
+plot(x, sol.u[1], lw=3, label="t0", size=(800,500))
+plot!(x, sol.u[end],lw=3, ls=:dash, label="tMax")
+
+
 
