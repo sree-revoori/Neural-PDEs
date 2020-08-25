@@ -52,5 +52,12 @@ function predict(θ)
     Array(solve(prob,Tsit5(),p=θ,dt=dt,saveat=t))
 end
 
+## Defining Loss function
+function loss(θ)
+    pred = predict(θ)
+    l = predict(θ)  - sol
+    return sum(abs2, l), pred # Mean squared error
+end
+
 
 
