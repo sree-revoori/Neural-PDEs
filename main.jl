@@ -47,5 +47,10 @@ sol = solve(prob,Tsit5(), dt=dt,saveat=t);
 plot(x, sol.u[1], lw=3, label="t0", size=(800,500))
 plot!(x, sol.u[end],lw=3, ls=:dash, label="tMax")
 
+ps  = [0.1, 0.2];   # Initial guess for model parameters
+function predict(θ)
+    Array(solve(prob,Tsit5(),p=θ,dt=dt,saveat=t))
+end
+
 
 
