@@ -83,6 +83,8 @@ plot!(PRED[end][:,end], lw=2, label="Prediction")
 res = DiffEqFlux.sciml_train(loss, ps, ADAM(0.01), cb = cb, maxiters = 100)  # Let check gradient propagation
 ps = res.minimizer
 
+res = DiffEqFlux.sciml_train(loss, ps, BFGS(), cb = cb, maxiters = 100)  # Let check gradient propagation
+@show res.minimizer # returns [0.999999999999975, 1.0000000000000213]
 
 
 
