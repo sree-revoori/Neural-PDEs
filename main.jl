@@ -76,6 +76,11 @@ end
 
 cb(ps,loss(ps)...) # Testing callback function
 
+# Let see prediction vs. Truth
+scatter(sol[:,end], label="Truth", size=(800,500))
+plot!(PRED[end][:,end], lw=2, label="Prediction")
+
+
 
 
 
