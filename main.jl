@@ -80,6 +80,9 @@ cb(ps,loss(ps)...) # Testing callback function
 scatter(sol[:,end], label="Truth", size=(800,500))
 plot!(PRED[end][:,end], lw=2, label="Prediction")
 
+res = DiffEqFlux.sciml_train(loss, ps, ADAM(0.01), cb = cb, maxiters = 100)  # Let check gradient propagation
+ps = res.minimizer
+
 
 
 
