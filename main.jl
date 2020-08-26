@@ -66,6 +66,13 @@ LOSS  = []                              # Loss accumulator
 PRED  = []                              # prediction accumulator
 PARS  = []                              # parameters accumulator
 
+cb = function (θ,l,pred) #callback function to observe training
+  display(l)
+  append!(PRED, [pred])
+  append!(LOSS, l)
+  append!(PARS, [θ])
+  false
+end
 
 
 
