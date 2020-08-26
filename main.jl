@@ -74,6 +74,10 @@ cb = function (θ,l,pred) #callback function to observe training
   false
 end
 
+cb(ps,loss(ps)...) # Testing callback function
+
+
+
 
 
 
