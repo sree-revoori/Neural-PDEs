@@ -19,4 +19,9 @@ end
 
 prob_truesde = SDEProblem(trueSDEfunc, true_noise_func, u0, tspan)
 
+# Take a typical sample from the mean
+ensemble_prob = EnsembleProblem(prob_truesde)
+ensemble_sol = solve(ensemble_prob, SOSRI(), trajectories = 10000)
+ensemble_sum = EnsembleSummary(ensemble_sol)
+
 
