@@ -26,4 +26,8 @@ ensemble_sum = EnsembleSummary(ensemble_sol)
 
 sde_data, sde_data_vars = Array.(timeseries_point_meanvar(ensemble_sol, tsteps))
 
+drift_dudt = FastChain((x, p) -> x.^3,
+                       FastDense(2, 50, tanh),
+                       FastDense(50, 2))
+
 
