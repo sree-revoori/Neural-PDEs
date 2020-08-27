@@ -17,4 +17,6 @@ function true_noise_func(du, u, p, t)
     du .= mp.*u
 end
 
+prob_truesde = SDEProblem(trueSDEfunc, true_noise_func, u0, tspan)
+
 
