@@ -10,3 +10,5 @@ function trueSDEfunc(du, u, p, t)
     true_A = [-0.1 2.0; -2.0 -0.1]
     du .= ((u.^3)'true_A)'
 end
+
+mp = Float32[0.2, 0.2]
