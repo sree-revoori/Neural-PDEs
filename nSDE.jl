@@ -24,4 +24,6 @@ ensemble_prob = EnsembleProblem(prob_truesde)
 ensemble_sol = solve(ensemble_prob, SOSRI(), trajectories = 10000)
 ensemble_sum = EnsembleSummary(ensemble_sol)
 
+sde_data, sde_data_vars = Array.(timeseries_point_meanvar(ensemble_sol, tsteps))
+
 
