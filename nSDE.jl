@@ -31,4 +31,7 @@ drift_dudt = FastChain((x, p) -> x.^3,
                        FastDense(50, 2))
 diffusion_dudt = FastChain(FastDense(2, 2))
 
+neuralsde = NeuralDSDE(drift_dudt, diffusion_dudt, tspan, SOSRI(),
+                       saveat = tsteps, reltol = 1e-1, abstol = 1e-1)
+
 
