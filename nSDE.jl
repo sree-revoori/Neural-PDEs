@@ -12,3 +12,9 @@ function trueSDEfunc(du, u, p, t)
 end
 
 mp = Float32[0.2, 0.2]
+
+function true_noise_func(du, u, p, t)
+    du .= mp.*u
+end
+
+
