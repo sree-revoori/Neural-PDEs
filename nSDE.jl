@@ -36,4 +36,7 @@ neuralsde = NeuralDSDE(drift_dudt, diffusion_dudt, tspan, SOSRI(),
 # Get the prediction using the correct initial condition
 prediction0 = neuralsde(u0)
 
+drift_(u, p, t) = drift_dudt(u, p[1:neuralsde.len])
+diffusion_(u, p, t) = diffusion_dudt(u, p[(neuralsde.len+1):end])
+
 
