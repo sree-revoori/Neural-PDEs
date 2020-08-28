@@ -33,5 +33,7 @@ diffusion_dudt = FastChain(FastDense(2, 2))
 
 neuralsde = NeuralDSDE(drift_dudt, diffusion_dudt, tspan, SOSRI(),
                        saveat = tsteps, reltol = 1e-1, abstol = 1e-1)
+# Get the prediction using the correct initial condition
+prediction0 = neuralsde(u0)
 
 
