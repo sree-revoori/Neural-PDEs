@@ -44,5 +44,6 @@ prob_neuralsde = SDEProblem(drift_, diffusion_, u0,(0.0f0, 1.2f0), neuralsde.p)
 ensemble_nprob = EnsembleProblem(prob_neuralsde)
 ensemble_nsol = solve(ensemble_nprob, SOSRI(), trajectories = 100,
                       saveat = tsteps)
+ensemble_nsum = EnsembleSummary(ensemble_nsol)
 
 
