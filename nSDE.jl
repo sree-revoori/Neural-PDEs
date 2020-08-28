@@ -46,4 +46,7 @@ ensemble_nsol = solve(ensemble_nprob, SOSRI(), trajectories = 100,
                       saveat = tsteps)
 ensemble_nsum = EnsembleSummary(ensemble_nsol)
 
+plt1 = plot(ensemble_nsum, title = "Neural SDE: Before Training")
+scatter!(plt1, tsteps, sde_data', lw = 3)
+
 
