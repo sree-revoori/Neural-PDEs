@@ -49,4 +49,7 @@ ensemble_nsum = EnsembleSummary(ensemble_nsol)
 plt1 = plot(ensemble_nsum, title = "Neural SDE: Before Training")
 scatter!(plt1, tsteps, sde_data', lw = 3)
 
+scatter(tsteps, sde_data[1,:], label = "data")
+scatter!(tsteps, prediction0[1,:], label = "prediction")
+
 
