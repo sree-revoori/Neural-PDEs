@@ -60,5 +60,9 @@ function loss_neuralsde(p; n = 100)
   samples = [predict_neuralsde(p) for i in 1:n]
   means = reshape(mean.([[samples[i][j] for i in 1:length(samples)]
                                         for j in 1:length(samples[1])]),
+                              size(samples[1])...)
+  vars = reshape(var.([[samples[i][j] for i in 1:length(samples)]
+                                      for j in 1:length(samples[1])]),
+                      size(samples[1])...)
 
 
