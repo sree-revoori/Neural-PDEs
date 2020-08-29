@@ -79,5 +79,9 @@ callback = function (p, loss, means, vars; doplot = false)
    list_plots = []
   end
    iter += 1
+    
+  # loss against current data
+  display(loss)
+
 
 
