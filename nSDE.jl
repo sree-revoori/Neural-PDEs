@@ -71,6 +71,9 @@ end
 list_plots = []
 iter = 0
 
+# Callback function to observe training
+callback = function (p, loss, means, vars; doplot = false)
+  global list_plots, iter
 
 
 
