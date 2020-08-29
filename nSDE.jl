@@ -68,6 +68,9 @@ function loss_neuralsde(p; n = 100)
   return loss, means, vars
 end
 
+list_plots = []
+iter = 0
+
 
 
 
