@@ -77,6 +77,7 @@ callback = function (p, loss, means, vars; doplot = false)
     
   if iter == 0
    list_plots = []
-
+  end
+   iter += 1
 
 
