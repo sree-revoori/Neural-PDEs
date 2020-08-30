@@ -92,5 +92,7 @@ callback = function (p, loss, means, vars; doplot = false)
       display(plt)
     end
   return false
+end
+
 
 
