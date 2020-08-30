@@ -88,5 +88,7 @@ callback = function (p, loss, means, vars; doplot = false)
                 ylim = (-4.0, 8.0), label = "data")
   scatter!(plt, tsteps, means[1,:], ribbon = vars[1,:], label = "prediction")
   push!(list_plots, plt)
+    if doplot
+      display(plt)
 
 
