@@ -94,5 +94,9 @@ callback = function (p, loss, means, vars; doplot = false)
   return false
 end
 
+opt = ADAM(0.025)
+
+# First round of training with n = 10
+
 
 
