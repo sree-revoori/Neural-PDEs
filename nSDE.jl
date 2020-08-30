@@ -90,5 +90,7 @@ callback = function (p, loss, means, vars; doplot = false)
   push!(list_plots, plt)
     if doplot
       display(plt)
+    end
+  return false
 
 
