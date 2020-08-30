@@ -82,6 +82,11 @@ callback = function (p, loss, means, vars; doplot = false)
     
   # loss against current data
   display(loss)
-
+    
+   # plot current prediction against data
+  plt = scatter(tsteps, sde_data[1,:], yerror = sde_data_vars[1,:],
+                ylim = (-4.0, 8.0), label = "data")
+  scatter!(plt, tsteps, means[1,:], ribbon = vars[1,:], label = "prediction")
+  push!(list_plots, plt)
 
 
