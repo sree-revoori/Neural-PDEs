@@ -97,6 +97,9 @@ end
 opt = ADAM(0.025)
 
 # First round of training with n = 10
+result1 = DiffEqFlux.sciml_train((p) -> loss_neuralsde(p, n = 10),  
+                                 neuralsde.p, opt,
+                                 cb = callback, maxiters = 100)
 
 
 
