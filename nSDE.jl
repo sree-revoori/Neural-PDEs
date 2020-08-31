@@ -118,6 +118,8 @@ plt2 = scatter(tsteps, sde_data', yerror = sde_data_vars',
                xlabel = "Time")
 plot!(plt2, tsteps, means', lw = 8, ribbon = vars', label = "prediction")
 
+plt = plot(plt1, plt2, layout = (2, 1))
+savefig(plt, "NN_sde_combined.png"); nothing # sde
 
 
 
