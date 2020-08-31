@@ -101,5 +101,9 @@ result1 = DiffEqFlux.sciml_train((p) -> loss_neuralsde(p, n = 10),
                                  neuralsde.p, opt,
                                  cb = callback, maxiters = 100)
 
+result2 = DiffEqFlux.sciml_train((p) -> loss_neuralsde(p, n = 100),
+                                 result1.minimizer, opt,
+                                 cb = callback, maxiters = 100)
+
 
 
