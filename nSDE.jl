@@ -109,5 +109,10 @@ samples = [predict_neuralsde(result2.minimizer) for i in 1:1000]
 means = reshape(mean.([[samples[i][j] for i in 1:length(samples)]
                                       for j in 1:length(samples[1])]),
 
+    size(samples[1])...)
+vars = reshape(var.([[samples[i][j] for i in 1:length(samples)]
+                                    for j in 1:length(samples[1])]),
+                    size(samples[1])...)
+
 
 
