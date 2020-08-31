@@ -116,6 +116,8 @@ vars = reshape(var.([[samples[i][j] for i in 1:length(samples)]
 plt2 = scatter(tsteps, sde_data', yerror = sde_data_vars',
                label = "data", title = "Neural SDE: After Training",
                xlabel = "Time")
+plot!(plt2, tsteps, means', lw = 8, ribbon = vars', label = "prediction")
+
 
 
 
