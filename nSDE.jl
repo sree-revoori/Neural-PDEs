@@ -105,5 +105,9 @@ result2 = DiffEqFlux.sciml_train((p) -> loss_neuralsde(p, n = 100),
                                  result1.minimizer, opt,
                                  cb = callback, maxiters = 100)
 
+samples = [predict_neuralsde(result2.minimizer) for i in 1:1000]
+means = reshape(mean.([[samples[i][j] for i in 1:length(samples)]
+                                      for j in 1:length(samples[1])]),
+
 
 
