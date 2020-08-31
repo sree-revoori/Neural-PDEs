@@ -113,6 +113,9 @@ means = reshape(mean.([[samples[i][j] for i in 1:length(samples)]
 vars = reshape(var.([[samples[i][j] for i in 1:length(samples)]
                                     for j in 1:length(samples[1])]),
                     size(samples[1])...)
+plt2 = scatter(tsteps, sde_data', yerror = sde_data_vars',
+               label = "data", title = "Neural SDE: After Training",
+               xlabel = "Time")
 
 
 
