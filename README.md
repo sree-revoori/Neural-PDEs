@@ -1,3 +1,3 @@
 # Neural-PDEs
 
-This is a short numerical analysis projet
+This is a short numerical analysis project written in Julia, a 
